@@ -1,0 +1,39 @@
+/* ✅ Navbar */
+.navbar {
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* ✅ Logo */
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: white !important;
+  }
+  
+  /* ✅ Liens du menu */
+  .nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    color: #ffd700 !important; /* Couleur or au survol */
+  }
+  
+  /* ✅ Bouton de recherche */
+  .btn-light {
+    background-color: white;
+    color: #007bff;
+    border-radius: 5px;
+  }
+  
+  .btn-light:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* ✅ Sélecteur de couleur */
+  .form-control-color {
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
