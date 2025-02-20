@@ -1,1 +1,64 @@
-<p>add-apartment works!</p>
+<div class="add-apartment-container">
+    <h2>Add Apartment</h2>
+    <form [formGroup]="apartForm" (ngSubmit)="onSubmit()">
+      
+      <!-- Apartment Number -->
+      <label>Apartment Number:</label>
+      <input formControlName="apartNum" type="text" placeholder="Enter apartment number">
+      <p *ngIf="apartForm.get('apartNum')?.invalid && apartForm.get('apartNum')?.touched" class="error-message">
+        Ce champ est requis et doit être un nombre.
+      </p>
+  
+      <!-- Floor Number -->
+      <label>Floor Number:</label>
+      <input formControlName="floorNum" type="text" placeholder="Enter floor number">
+      <p *ngIf="apartForm.get('floorNum')?.invalid && apartForm.get('floorNum')?.touched" class="error-message">
+        Ce champ est requis et doit être un nombre.
+      </p>
+  
+      <!-- Surface -->
+      <label>Surface:</label>
+      <input formControlName="surface" type="text" placeholder="Enter surface">
+  
+      <!-- Terrace -->
+      <label>Terrace:</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" formControlName="terrace" [value]="true"> Yes
+        </label>
+        <label>
+          <input type="radio" formControlName="terrace" [value]="false"> No
+        </label>
+      </div>
+  
+      <!-- Surface Terrace -->
+      <label>Surface Terrace:</label>
+      <input formControlName="surfaceterrace" type="text" placeholder="Enter terrace surface">
+  
+      <!-- Category -->
+      <label>Category:</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" formControlName="category" value="S+1"> S+1
+        </label>
+        <label>
+          <input type="radio" formControlName="category" value="S+2"> S+2
+        </label>
+        <label>
+          <input type="radio" formControlName="category" value="S+3"> S+3
+        </label>
+      </div>
+  
+      <!-- Residence ID -->
+      <label>Residence:</label>
+      <input formControlName="ResidenceId" type="text" placeholder="Enter residence ID">
+  
+      <!-- Buttons -->
+      <div class="btn-group">
+        <button type="submit" class="btn-add" [disabled]="apartForm.invalid">Add</button>
+        <button type="button" class="btn-reset" (click)="apartForm.reset()">Reset</button>
+      </div>
+  
+    </form>
+  </div>
+  
